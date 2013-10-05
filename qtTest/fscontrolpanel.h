@@ -23,6 +23,7 @@ private slots:
     void on_hideFrameButton_clicked();
 
     void on_laserOnButton_clicked();
+
     void on_laserOffButton_clicked();
 
     void on_checkBox_stateChanged(int arg1);

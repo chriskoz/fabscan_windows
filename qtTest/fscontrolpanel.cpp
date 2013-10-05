@@ -102,8 +102,10 @@ void FSControlPanel::on_pushButton_clicked()
 //    //this->hide();
 //}
 
+
 void FSControlPanel::on_binaryImage_clicked()
 {
+/*
     if(FSController::getInstance()->webcam->info.portName.isEmpty()){
       //  FSController::getInstance()->mainwindow->showDialog("No webcam selected!");
      //   return;
@@ -116,6 +118,7 @@ void FSControlPanel::on_binaryImage_clicked()
     this->raise();
     this->focusWidget();
     this->setVisible(true);
+*/
 }
 
 void FSControlPanel::on_laserEnable_stateChanged(int state)
@@ -129,36 +132,28 @@ void FSControlPanel::on_laserEnable_stateChanged(int state)
 
 void FSControlPanel::on_laserStepLeftButton_clicked()
 {
-   // FSController::getInstance()->laser->setDirection(FS_DIRECTION_CCW);
-   // FSController::getInstance()->laser->turnNumberOfDegrees(2.0);
-
-	 FSController::getInstance()->serial->serialPortPath->clear();
-//	   
-	this->close();
-
+    FSController::getInstance()->laser->setDirection(FS_DIRECTION_CCW);
+    FSController::getInstance()->laser->turnNumberOfDegrees(2.0);
 }
 
 void FSControlPanel::on_laserStepRightButton_clicked()
 {
-
-	  cv::Mat frame;
-    frame = FSController::getInstance()->webcam->getFrame();
-
-  //  FSController::getInstance()->laser->setDirection(FS_DIRECTION_CW);
-  //  FSController::getInstance()->laser->turnNumberOfDegrees(2.0);
+    FSController::getInstance()->laser->setDirection(FS_DIRECTION_CW);
+    FSController::getInstance()->laser->turnNumberOfDegrees(2.0);
 }
 
 void FSControlPanel::on_diffImage_clicked()
 {
     if(FSController::getInstance()->webcam->info.portName.isEmpty()){
-      //  FSController::getInstance()->mainwindow->showDialog("No webcam selected!");
-    //    return;
+        FSController::getInstance()->mainwindow->showDialog("No webcam selected!");
+        return;
     }
     cv::Mat shot = FSController::getInstance()->diffImage();
     cv::resize(shot,shot,cv::Size(800,600));
-    cv::imshow("extractedlaserLine2",shot);
-    cv::waitKey(1000);
-  //  cvDestroyWindow("Laser Frame");
+//    cv::imshow("extractedlaserLine2",shot);
+    cv::imshow("Laser Frame",shot);
+    cv::waitKey(0);
+    cvDestroyWindow("Laser Frame");
     this->raise();
     this->focusWidget();
     this->setVisible(true);
@@ -195,7 +190,7 @@ void FSControlPanel::on_pushButton_2_clicked()
     cv::resize( laserOffFrame,laserOffFrame,cv::Size(1280,960) );
 
     qDebug() << "pressed";
-    cv::Mat shot = FSVision::subLaser2(laserOffFrame, laserOnFrame,0);
+    cv::Mat shot = FSVision::subLaser2(laserOffFrame, laserOnFrame);
     cv::resize(shot,shot,cv::Size(800,600));
     cv::imshow("extractedlaserLine2",shot);
     cv::waitKey(1000);

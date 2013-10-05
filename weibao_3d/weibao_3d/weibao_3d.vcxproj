@@ -41,8 +41,8 @@
     <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
     <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
     <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
-    <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">D:\PCL160\3rdParty\Eigen\include;D:\PCL160\3rdParty\Boost\include;D:\PCL160\3rdParty\FLANN\include;C:\opencv\opencv\build\include;D:\PCL160\include\pcl-1.6;D:\Qt\Qt5.0.2\5.0.2\msvc2010_opengl\include\QtMultimedia;D:\Qt\Qt5.0.2\5.0.2\msvc2010_opengl\include\QtMultimediaWidgets;$(IncludePath)</IncludePath>
-    <LibraryPath Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">D:\PCL160\3rdParty\Boost\lib;D:\PCL160\3rdParty\Eigen\bin;D:\PCL160\3rdParty\FLANN\lib;C:\opencv\opencv\build\x86\vc10\lib;D:\PCL160\lib;D:\PCL160\3rdParty\VTK\lib\vtk-5.8;$(LibraryPath)</LibraryPath>
+    <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">D:\PCL160\3rdParty\Eigen\include;D:\PCL160\3rdParty\Boost\include;D:\PCL160\3rdParty\FLANN\include;d:\opencv\build\include;D:\PCL160\include\pcl-1.6;D:\Qt\Qt5.1.1\5.1.1\msvc2010_opengl\include\QtMultimedia;D:\Qt\Qt5.1.1\5.1.1\msvc2010_opengl\include\QtMultimediaWidgets;$(IncludePath)</IncludePath>
+    <LibraryPath Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">D:\PCL160\3rdParty\Boost\lib;D:\PCL160\3rdParty\Eigen\bin;D:\PCL160\3rdParty\FLANN\lib;d:\opencv\build\x86\vc10\lib;D:\PCL160\lib;D:\PCL160\3rdParty\VTK\lib\vtk-5.8;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -51,14 +51,14 @@
       <Optimization>Disabled</Optimization>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
-      <TreatWChar_tAsBuiltInType>false</TreatWChar_tAsBuiltInType>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <OutputFile>$(OutDir)\$(ProjectName).exe</OutputFile>
-      <AdditionalLibraryDirectories>$(QTDIR)\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(QTDIR)\lib;$(ProjectDir)\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>qtmaind.lib;Qt5Cored.lib;Qt5Guid.lib;Qt5OpenGLd.lib;opengl32.lib;glu32.lib;Qt5Widgetsd.lib;pcl_apps_debug.lib;pcl_common_debug.lib;pcl_features_debug.lib;pcl_filters_debug.lib;pcl_kdtree_debug.lib;pcl_keypoints_debug.lib;pcl_octree_debug.lib;pcl_registration_debug.lib;pcl_sample_consensus_debug.lib;pcl_search_debug.lib;pcl_segmentation_debug.lib;pcl_surface_debug.lib;pcl_tracking_debug.lib;pcl_visualization_debug.lib;pcl_io_debug.lib;pcl_io_ply_debug.lib;vtkalglib-gd.lib;vtkCharts-gd.lib;vtkCommon-gd.lib;vtkDICOMParser-gd.lib;vtkexoIIc-gd.lib;vtkexpat-gd.lib;vtkFiltering-gd.lib;vtkfreetype-gd.lib;vtkftgl-gd.lib;vtkGenericFiltering-gd.lib;vtkGeovis-gd.lib;vtkGraphics-gd.lib;vtkhdf5-gd.lib;vtkHybrid-gd.lib;vtkImaging-gd.lib;vtkInfovis-gd.lib;vtkIO-gd.lib;vtkjpeg-gd.lib;vtklibxml2-gd.lib;vtkmetaio-gd.lib;vtkNetCDF-gd.lib;vtkNetCDF_cxx-gd.lib;vtkpng-gd.lib;vtkproj4-gd.lib;vtkRendering-gd.lib;vtksqlite-gd.lib;vtksys-gd.lib;vtktiff-gd.lib;vtkverdict-gd.lib;vtkViews-gd.lib;vtkVolumeRendering-gd.lib;vtkWidgets-gd.lib;vtkzlib-gd.lib;opencv_calib3d243d.lib;opencv_contrib243d.lib;opencv_core243d.lib;opencv_features2d243d.lib;opencv_flann243d.lib;opencv_gpu243d.lib;opencv_highgui243d.lib;opencv_imgproc243d.lib;opencv_legacy243d.lib;opencv_ml243d.lib;opencv_objdetect243d.lib;opencv_ts243d.lib;opencv_video243d.lib;Qt5Multimediad.lib;Qt5MultimediaQuick_pd.lib;Qt5MultimediaWidgetsd.lib;Qt5AxBased.lib;Qt5AxContainerd.lib;Qt5AxServerd.lib;Qt5CLucened.lib;Qt5Concurrentd.lib;Qt5Declaratived.lib;Qt5DesignerComponentsd.lib;Qt5Designerd.lib;Qt5Helpd.lib;Qt5Networkd.lib;Qt5PlatformSupportd.lib;Qt5PrintSupportd.lib;Qt5Qmld.lib;Qt5QmlDevToolsd.lib;Qt5Quickd.lib;Qt5QuickParticlesd.lib;Qt5QuickTestd.lib;Qt5Scriptd.lib;Qt5ScriptToolsd.lib;Qt5Sqld.lib;Qt5Svgd.lib;Qt5Testd.lib;Qt5UiToolsd.lib;Qt5V8d.lib;Qt5WebKitd.lib;Qt5WebKitWidgetsd.lib;Qt5Xmld.lib;Qt5XmlPatternsd.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>qtmaind.lib;Qt5Cored.lib;Qt5Guid.lib;Qt5OpenGLd.lib;opengl32.lib;glu32.lib;Qt5Widgetsd.lib;pcl_apps_debug.lib;pcl_common_debug.lib;pcl_features_debug.lib;pcl_filters_debug.lib;pcl_kdtree_debug.lib;pcl_keypoints_debug.lib;pcl_octree_debug.lib;pcl_registration_debug.lib;pcl_sample_consensus_debug.lib;pcl_search_debug.lib;pcl_segmentation_debug.lib;pcl_surface_debug.lib;pcl_tracking_debug.lib;pcl_visualization_debug.lib;pcl_io_debug.lib;pcl_io_ply_debug.lib;vtkalglib-gd.lib;vtkCharts-gd.lib;vtkCommon-gd.lib;vtkDICOMParser-gd.lib;vtkexoIIc-gd.lib;vtkexpat-gd.lib;vtkFiltering-gd.lib;vtkfreetype-gd.lib;vtkftgl-gd.lib;vtkGenericFiltering-gd.lib;vtkGeovis-gd.lib;vtkGraphics-gd.lib;vtkhdf5-gd.lib;vtkHybrid-gd.lib;vtkImaging-gd.lib;vtkInfovis-gd.lib;vtkIO-gd.lib;vtkjpeg-gd.lib;vtklibxml2-gd.lib;vtkmetaio-gd.lib;vtkNetCDF-gd.lib;vtkNetCDF_cxx-gd.lib;vtkpng-gd.lib;vtkproj4-gd.lib;vtkRendering-gd.lib;vtksqlite-gd.lib;vtksys-gd.lib;vtktiff-gd.lib;vtkverdict-gd.lib;vtkViews-gd.lib;vtkVolumeRendering-gd.lib;vtkWidgets-gd.lib;vtkzlib-gd.lib;opencv_calib3d246d.lib;opencv_contrib246d.lib;opencv_core246d.lib;opencv_features2d246d.lib;opencv_flann246d.lib;opencv_gpu246d.lib;opencv_highgui246d.lib;opencv_imgproc246d.lib;opencv_legacy246d.lib;opencv_ml246d.lib;opencv_objdetect246d.lib;opencv_ts246d.lib;opencv_video246d.lib;Qt5Multimediad.lib;Qt5MultimediaQuick_pd.lib;Qt5MultimediaWidgetsd.lib;Qt5AxBased.lib;Qt5AxContainerd.lib;Qt5AxServerd.lib;Qt5CLucened.lib;Qt5Concurrentd.lib;Qt5Declaratived.lib;Qt5DesignerComponentsd.lib;Qt5Designerd.lib;Qt5Helpd.lib;Qt5Networkd.lib;Qt5PlatformSupportd.lib;Qt5PrintSupportd.lib;Qt5Qmld.lib;Qt5Quickd.lib;Qt5QuickParticlesd.lib;Qt5QuickTestd.lib;Qt5Scriptd.lib;Qt5ScriptToolsd.lib;Qt5Sqld.lib;Qt5Svgd.lib;Qt5Testd.lib;Qt5UiToolsd.lib;Qt5V8d.lib;Qt5WebKitd.lib;Qt5WebKitWidgetsd.lib;Qt5Xmld.lib;Qt5XmlPatternsd.lib;Qt5ExtSerialPortd1.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -81,6 +81,7 @@
   <ItemGroup>
     <ClCompile Include="..\..\qtTest\atfx.cpp" />
     <ClCompile Include="..\..\qtTest\atfz.cpp" />
+    <ClCompile Include="..\..\qttest\fsconfiguration.cpp" />
     <ClCompile Include="..\..\qttest\fscontroller.cpp" />
     <ClCompile Include="..\..\qttest\fscontrolpanel.cpp" />
     <ClCompile Include="..\..\qttest\fsdialog.cpp" />
@@ -164,6 +165,7 @@
   <ItemGroup>
     <ClInclude Include="..\..\qtTest\atfx.h" />
     <ClInclude Include="..\..\qtTest\atfz.h" />
+    <ClInclude Include="..\..\qttest\fsconfiguration.h" />
     <ClInclude Include="..\..\qttest\fscontroller.h" />
     <ClInclude Include="..\..\qttest\fsdefines.h" />
     <ClInclude Include="..\..\qttest\fsgeometries.h" />

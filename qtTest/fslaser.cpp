@@ -9,15 +9,19 @@ FSLaser::FSLaser()
     degreesPerStep = 360.0f/200.0f/16.0f; //the size of a microstep
     direction = FS_DIRECTION_CW;
     rotation = FSMakePoint(0.0f, 0.0f, 0.0f);
-    position = FSMakePoint(LASER_POS_X, LASER_POS_Y, LASER_POS_Z);
+    position = FSMakePoint(
+                FSController::config->LASER_POS_X,
+                FSController::config->LASER_POS_Y,
+                FSController::config->LASER_POS_Z);
     //FSController::getInstance()->controlPanel->setLaserSwipeMaxEditText(rotation.y);
 }
 
 void FSLaser::selectStepper()
 {
-    char c[2];
+    char c[3];
     c[0] = MC_SELECT_STEPPER;
     c[1] = MC_LASER_STEPPER;
+	c[2] = 0;
     FSController::getInstance()->serial->writeChars(c);
 }
 
@@ -28,6 +32,8 @@ void FSLaser::turnOn()
 
 void FSLaser::turnOff()
 {
+	unsigned char tmp = MC_TURN_LASER_OFF;
+    cout << "writing to serial port: " << (int)((unsigned char)tmp);
     FSController::getInstance()->serial->writeChar(MC_TURN_LASER_OFF);
 }
 
@@ -37,6 +43,7 @@ void FSLaser::turnNumberOfSteps(unsigned int steps)
     qDebug()<<"Steps: " << steps;
     unsigned char size = steps/256*2;
     char c[9999];//size];
+	memset(c, 0x00, 9999);
     unsigned int s = steps;
     for(unsigned int i=0; i<=(steps/256); i++){
         c[2*i]=MC_PERFORM_STEP;
@@ -105,9 +112,8 @@ void FSLaser::disable(void)
     FSController::getInstance()->serial->writeChar(MC_TURN_STEPPER_OFF);
 }
 
-void FSLaser::setLaserPointPosition(FSPoint p, cv::Point mp)
+void FSLaser::setLaserPointPosition(FSPoint p)
 {
-	mpx=mp;
     laserPointPosition = p;
     double b = position.x - laserPointPosition.x;
     double a = position.z - laserPointPosition.z;

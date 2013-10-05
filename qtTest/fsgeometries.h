@@ -1,7 +1,7 @@
 #ifndef FSGEOMETRIES_H
 #define FSGEOMETRIES_H
 
-//typedef double double; //in cm
+typedef double FSFloat; //in cm
 typedef unsigned char FSUChar; //in cm
 typedef unsigned char FSBool;
 
@@ -11,9 +11,9 @@ typedef unsigned char FSBool;
 
 typedef struct _FSColor
 {
-  unsigned char red;
-  unsigned char green;
-  unsigned char blue;
+  FSUChar red;
+  FSUChar green;
+  FSUChar blue;
 } FSColor;
 
 static FSColor FSMakeColor(FSUChar red, FSUChar green, FSUChar blue)
@@ -29,17 +29,15 @@ static FSColor FSMakeColor(FSUChar red, FSUChar green, FSUChar blue)
 /*          FS_POINT            */
 /********************************/
 
-typedef struct FSPoint//_FSPoint
+typedef struct _FSPoint
 {
-  double x;
-  double y;
-  double z;
+  FSFloat x;
+  FSFloat y;
+  FSFloat z;
   FSColor color;
-} ;
+} FSPoint;
 
-
-
-static FSPoint FSMakePoint(double x, double y, double z)
+static FSPoint FSMakePoint(FSFloat x, FSFloat y, FSFloat z)
 {
     FSPoint p;
     p.x = x;
@@ -54,12 +52,12 @@ static FSPoint FSMakePoint(double x, double y, double z)
 
 typedef struct _FSSize
 {
-  double width;
-  double height;
-  double depth;
+  FSFloat width;
+  FSFloat height;
+  FSFloat depth;
 } FSSize;
 
-static FSSize FSMakeSize(double width, double height, double depth)
+static FSSize FSMakeSize(FSFloat width, FSFloat height, FSFloat depth)
 {
     FSSize s;
     s.width = width;
@@ -74,11 +72,11 @@ static FSSize FSMakeSize(double width, double height, double depth)
 
 typedef struct _FSLine
 {
-  double a;
-  double b;
+  FSFloat a;
+  FSFloat b;
 } FSLine;
 
-static FSLine FSMakeLine(double a, double b)
+static FSLine FSMakeLine(FSFloat a, FSFloat b)
 {
     FSLine l;
     l.a = a;

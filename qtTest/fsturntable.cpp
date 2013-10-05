@@ -10,20 +10,22 @@ FSTurntable::FSTurntable()
 
 void FSTurntable::turnNumberOfSteps(unsigned int steps)
 {
-    //unsigned char size = steps/256*2;
-    //char c[20];//size];
-    //unsigned int s = steps;
-    //for(unsigned int i=0; i<=steps/256; i++){
-    //    c[2*i]=MC_PERFORM_STEP;
-    //    if(s<256){
-    //        c[2*i+1]=s%256;
-    //    }else{
-    //        c[2*i+1]=255;
-    //        s-=255;
-    //    }
-    //}
+    unsigned char size = steps/256*2;
+    char c[20];//size];
+	memset(c, 0x00, 20);
+    unsigned int s = steps;
+    for(unsigned int i=0; i<=steps/256; i++){
+        c[2*i]=MC_PERFORM_STEP;
+        if(s<256){
+            c[2*i+1]=s%256;
+        }else{
+            c[2*i+1]=255;
+            s-=255;
+        }
+    }
+	unsigned char *tmpChar = (unsigned char *)c;
     this->selectStepper();
-  //  FSController::getInstance()->serial->writeChars(c);
+    FSController::getInstance()->serial->writeChars(c);
 }
 
 void FSTurntable::turnNumberOfDegrees(double degrees)
@@ -34,7 +36,7 @@ void FSTurntable::turnNumberOfDegrees(double degrees)
     }else if(direction==FS_DIRECTION_CCW){
       rotation.y += degrees;
     }
-    turnNumberOfSteps(1);
+    turnNumberOfSteps(steps);
 }
 
 void FSTurntable::setDirection(FSDirection d)
@@ -52,10 +54,11 @@ void FSTurntable::toggleDirection(){
 
 void FSTurntable::selectStepper()
 {
-    char c[1];
+    char c[3];
     c[0] = MC_SELECT_STEPPER;
-   // c[1] ='a';// MC_TURNTABLE_STEPPER;
-    FSController::getInstance()->serial->writeChar(MC_SELECT_STEPPER);
+    c[1] = MC_TURNTABLE_STEPPER;
+	c[2] = 0;
+    FSController::getInstance()->serial->writeChars(c);
 }
 
 void FSTurntable::enable(void)

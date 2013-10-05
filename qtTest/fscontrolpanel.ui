@@ -6,20 +6,20 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>135</width>
-    <height>480</height>
+    <width>751</width>
+    <height>485</height>
    </rect>
   </property>
   <property name="minimumSize">
    <size>
-    <width>135</width>
+    <width>580</width>
     <height>360</height>
    </size>
   </property>
   <property name="maximumSize">
    <size>
-    <width>135</width>
-    <height>480</height>
+    <width>1580</width>
+    <height>1360</height>
    </size>
   </property>
   <property name="windowTitle">
@@ -32,9 +32,9 @@
    <property name="geometry">
     <rect>
      <x>10</x>
-     <y>90</y>
+     <y>120</y>
      <width>121</width>
-     <height>181</height>
+     <height>190</height>
     </rect>
    </property>
    <property name="title">
@@ -92,6 +92,19 @@
      <string>Enabled</string>
     </property>
    </widget>
+   <widget class="QPushButton" name="laserStepLeftButton">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>80</y>
+      <width>51</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>&lt;</string>
+    </property>
+   </widget>
    <widget class="QPushButton" name="laserStepRightButton">
     <property name="geometry">
      <rect>
@@ -122,7 +135,7 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>150</y>
+      <y>160</y>
       <width>40</width>
       <height>21</height>
      </rect>
@@ -132,7 +145,7 @@
     <property name="geometry">
      <rect>
       <x>70</x>
-      <y>150</y>
+      <y>160</y>
       <width>40</width>
       <height>21</height>
      </rect>
@@ -143,9 +156,9 @@
    <property name="geometry">
     <rect>
      <x>10</x>
-     <y>270</y>
+     <y>320</y>
      <width>121</width>
-     <height>151</height>
+     <height>140</height>
     </rect>
    </property>
    <property name="title">
@@ -165,19 +178,19 @@
     </property>
    </widget>
    <widget class="QPushButton" name="binaryImage">
-    <property name="geometry">
-     <rect>
-      <x>0</x>
-      <y>50</y>
-      <width>121</width>
-      <height>32</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Binary Image</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="diffImage">
+      <property name="geometry">
+        <rect>
+          <x>0</x>
+          <y>50</y>
+          <width>121</width>
+          <height>32</height>
+        </rect>
+      </property>
+      <property name="text">
+        <string>Binary Image</string>
+      </property>
+    </widget>
+    <widget class="QPushButton" name="diffImage">
     <property name="geometry">
      <rect>
       <x>0</x>
@@ -210,7 +223,7 @@
      <x>10</x>
      <y>0</y>
      <width>121</width>
-     <height>91</height>
+     <height>111</height>
     </rect>
    </property>
    <property name="title">
@@ -220,9 +233,9 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>40</y>
+      <y>50</y>
       <width>51</width>
-      <height>21</height>
+      <height>32</height>
      </rect>
     </property>
     <property name="text">
@@ -233,9 +246,9 @@
     <property name="geometry">
      <rect>
       <x>60</x>
-      <y>40</y>
+      <y>50</y>
       <width>50</width>
-      <height>21</height>
+      <height>32</height>
      </rect>
     </property>
     <property name="text">
@@ -246,7 +259,7 @@
     <property name="geometry">
      <rect>
       <x>20</x>
-      <y>60</y>
+      <y>80</y>
       <width>70</width>
       <height>20</height>
      </rect>
@@ -258,9 +271,9 @@
    <widget class="QLineEdit" name="degreesEdit">
     <property name="geometry">
      <rect>
-      <x>13</x>
-      <y>16</y>
-      <width>91</width>
+      <x>10</x>
+      <y>30</y>
+      <width>100</width>
       <height>22</height>
      </rect>
     </property>
@@ -291,9 +304,9 @@
   <widget class="QCameraViewfinder" name="viewfinder" native="true">
    <property name="geometry">
     <rect>
-     <x>130</x>
+     <x>140</x>
      <y>20</y>
-     <width>211</width>
+     <width>601</width>
      <height>451</height>
     </rect>
    </property>
@@ -303,42 +316,34 @@
    <property name="styleSheet">
     <string notr="true"/>
    </property>
-   <widget class="QLabel" name="cameraLabel">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>0</y>
-      <width>211</width>
-      <height>450</height>
-     </rect>
-    </property>
-    <property name="autoFillBackground">
-     <bool>false</bool>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: black; color: white;</string>
-    </property>
-    <property name="frameShape">
-     <enum>QFrame::Box</enum>
-    </property>
-    <property name="text">
-     <string>                                                Select a camera from the menu!</string>
-    </property>
-   </widget>
   </widget>
-  <widget class="QPushButton" name="laserStepLeftButton">
+  <widget class="QLabel" name="cameraLabel">
    <property name="geometry">
     <rect>
-     <x>10</x>
-     <y>430</y>
-     <width>111</width>
-     <height>32</height>
+     <x>140</x>
+     <y>20</y>
+     <width>600</width>
+     <height>450</height>
     </rect>
    </property>
+   <property name="autoFillBackground">
+    <bool>false</bool>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: black; color: white;</string>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::Box</enum>
+   </property>
    <property name="text">
-    <string>EXIT</string>
+    <string>                                                Select a camera from the menu!</string>
    </property>
   </widget>
+  <zorder>cameraLabel</zorder>
+  <zorder>groupBox</zorder>
+  <zorder>groupBox_2</zorder>
+  <zorder>groupBox_3</zorder>
+  <zorder>viewfinder</zorder>
  </widget>
  <customwidgets>
   <customwidget>

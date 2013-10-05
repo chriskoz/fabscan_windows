@@ -11,9 +11,11 @@
 #include "fsturntable.h"
 #include "fslaser.h"
 #include "fsvision.h"
+#include "fsconfiguration.h"
 
 class GeometryEngine;
 class FSModel;
+class FSController;
 /*class FSSerial;
 class FSWebCam;
 class MainWindow;
@@ -25,7 +27,6 @@ class FSController
         static FSController* singleton;
         FSController();
 
-
     public:
         MainWindow* mainwindow;
         FSControlPanel* controlPanel;
@@ -36,6 +37,8 @@ class FSController
         FSTurntable* turntable;
         FSLaser* laser;
         FSVision* vision;
+
+        static FSConfiguration* config;
 
         //Singleton Pattern
         static FSController* getInstance();
@@ -50,11 +53,12 @@ class FSController
         void scanThread2();
         bool detectLaserLine();
         void computeSurfaceMesh();
-        cv::Mat subLaser();
+ //       cv::Mat subLaser();
         cv::Mat diffImage();
 
-        unsigned int threshold;
+		bool waitForController();
 
+ //       unsigned int threshold;
         bool scanning; //wether we are scanning or not, used to interrupt scanning
         bool meshComputed; //wether the surface meshhas already been computed from the point cloud or not
         double laserSwipeMin;

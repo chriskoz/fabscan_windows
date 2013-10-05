@@ -1,9 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
+# Visual C++ Express 2010
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "weibao_3d", "weibao_3d\weibao_3d.vcxproj", "{966B7328-0FD2-4B0C-AA2B-92283D7C7FE5}"
-EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "weibao3d_2", "..\weibao3d_2\weibao3d_2.vcxproj", "{1F131F2A-5344-4D54-91FC-C5EAEB5E6EB2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,10 +13,6 @@ Global
 		{966B7328-0FD2-4B0C-AA2B-92283D7C7FE5}.Debug|Win32.Build.0 = Debug|Win32
 		{966B7328-0FD2-4B0C-AA2B-92283D7C7FE5}.Release|Win32.ActiveCfg = Release|Win32
 		{966B7328-0FD2-4B0C-AA2B-92283D7C7FE5}.Release|Win32.Build.0 = Release|Win32
-		{1F131F2A-5344-4D54-91FC-C5EAEB5E6EB2}.Debug|Win32.ActiveCfg = Debug|Win32
-		{1F131F2A-5344-4D54-91FC-C5EAEB5E6EB2}.Debug|Win32.Build.0 = Debug|Win32
-		{1F131F2A-5344-4D54-91FC-C5EAEB5E6EB2}.Release|Win32.ActiveCfg = Release|Win32
-		{1F131F2A-5344-4D54-91FC-C5EAEB5E6EB2}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

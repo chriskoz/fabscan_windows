@@ -33,12 +33,11 @@ public:
     void setRotation(FSPoint r);                //set the current rotation of the turntable
     FSPoint getRotation(void);                  //get the current rotation of the turntable
 
-    void setLaserPointPosition(FSPoint p, cv::Point mp);
+    void setLaserPointPosition(FSPoint p);
     FSPoint getLaserPointPosition(void);
 
     FSPoint getPosition(void);
-	
-	cv::Point mpx;
+
 };
 
 #endif // FSLASER_H

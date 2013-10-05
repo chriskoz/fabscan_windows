@@ -8,13 +8,7 @@
 
 #include <QCamera>
 #include <QCameraImageCapture>
-#include <opencv2/core/core.hpp>
-
-#include <opencv2/highgui/highgui.hpp>
-
-
-
-#include "fsgeometries.h"
+#include "staticHeaders.h"
 
 struct FSWebCamInfo
 {
@@ -33,10 +27,11 @@ public:
     QCamera* camera;        //new qt5 camera representative
     QCameraImageCapture *imageCapture;
 
-	 
+/*	 
 	void StartX();
 		void StartX2();
     cv::VideoCapture imageCaptureCv; 
+*/
 
     QImageEncoderSettings imageSettings;
     cv::Mat frame;

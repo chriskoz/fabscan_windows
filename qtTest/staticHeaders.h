@@ -5,9 +5,6 @@
 #include <opencv2/core/core.hpp>
 #include <opencv2/highgui/highgui.hpp>
 #include <opencv2/imgproc/imgproc.hpp>
-
-
-
 #ifndef Q_MOC_RUN
 #include <pcl/point_types.h>
 #endif

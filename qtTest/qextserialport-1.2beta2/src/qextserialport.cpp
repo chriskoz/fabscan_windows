@@ -121,7 +121,7 @@ void QextSerialPortPrivate::setBaudRate(BaudRateType baudRate, bool update)
     case BAUD19200:
     case BAUD38400:
     case BAUD57600:
-   // case BAUD115200:
+    case BAUD115200:
 #ifdef Q_OS_WIN
     default:
 #endif

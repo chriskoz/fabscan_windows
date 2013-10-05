@@ -17,6 +17,7 @@ public:
     bool connectToSerialPort();
     void writeChar(char c);
     void writeChars(char* c);
+	bool heatbeat();
 
 private slots:
     void onReadyRead();
@@ -24,6 +25,7 @@ private slots:
 
 private:
     QextSerialPort *serialPort;
+	bool recievedPing;
 
 };
 
